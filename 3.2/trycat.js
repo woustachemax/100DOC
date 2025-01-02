@@ -1,0 +1,1 @@
+//try cat is basically if/else but for errors

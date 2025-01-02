@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cal C</title>
+    <style>
+        #container1{
+            background-color: salmon;
+            font-size: 100;
+            margin: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<script>
+    function populateDiv(){
+        //alert('hey!');
+        const a = document.getElementById("firstNumber").value;
+       const b = document.getElementById("secondNumber").value;
+      // const element = document.getElementById("finalSum")
+       //element.innerHTML = "The sum of "+ a + " and " +b + " is " + (parseFloat(a)+parseFloat(b));
+        fetch=("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" +b)
+        .then(function(response){
+            console.log(response);
+            response.text()
+            .then(function(ans){
+                console.log(ans);
+            })
+        });
+
+    }
+</script>
+<body>
+ <div id="container1">
+    <input type="number" id="firstNumber" placeholder="First number"><br><br>
+    <input type="number" id="secondNumber" placeholder="Second Number"><br><br>
+    <button onclick="populateDiv()">Calculate Sum</button><br><br>
+    <div id="finalSum"></div>
+</div>
+</body>
+</html>

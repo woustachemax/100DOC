@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interest - Loan pe</title>
+</head>
+<body>
+    <input type="number" placeholder="Principal Amount" id="principalAmount"><br><br>
+    <input type="number" placeholder="Rate of Interest" id="rateOfInterest"><br><br>
+    <input type="number" placeholder="Number of Years" id="time"><br><br>
+    <button onclick="interestCalculator()"></button><br><br>
+<script>
+    async function interestCalculator(){
+        const p = document.getElementById("principalAmount").value;
+        const r = document.getElementById("rateOfInterest").value;
+        const t = document.getElementById("time").value;
+        const simpleInterest = await fetch("https://sum-server.100xdevs.com/interest?principal=" + p + "&rate=" + r + "&time=" +t);
+        const finInt = await simpleInterest.text();
+        document.getElementById("interestCalculator").innerHTML=finInt;
+    }
+    
+</script>
+</body>
+</html>

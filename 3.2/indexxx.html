@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Butt</title>
+</head>
+<body>
+    <script>
+        async function getCatImg(){
+            const catPics = await fetch('https://api.thecatapi.com/v1/');
+            const response = await catPics.json();
+            console.log(response);
+        }
+    </script>
+    <button onclick="getCatImg">Cat Pics</button>
+</body>
+</html>

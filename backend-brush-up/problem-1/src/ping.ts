@@ -3,6 +3,8 @@ import { Router } from "express";
 import { Schema, z } from "zod";
 import { Prisma, PrismaClient } from "@prisma/client";
 import { generateToken } from "./utils/auth";
+
+
 const client = new PrismaClient();
 
 

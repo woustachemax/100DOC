@@ -1,6 +1,6 @@
 import { Express, Request, Response, NextFunction } from "express";
 import { Router } from "express";
-import zod,  from "zod";
+import zod  from "zod";
 import { PrismaClient } from "@prisma/client";
 import { generateToken, validateToken } from "../utils/auth";
 
